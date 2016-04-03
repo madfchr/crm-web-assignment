@@ -65,9 +65,3 @@ class Contact
     @@contacts.delete_if { |contact| contact.id == self.id }
   end
 end
-
-# require 'sinatra'
-#
-# get '/' do
-#   'Hello World'
-# end
