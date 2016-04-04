@@ -2,23 +2,23 @@
 # Do NOT copy the CRM class from the old crm assignment, as it won't work at all for the web-based version!
 # You'll have to implement it from scratch.
 
-require_relative 'contact'
-require 'sinatra'
+require_relative "contact"
+require "sinatra"
 
-get '/' do      # '/' matches the top level of my website
+get "/" do      # '/' matches the top level of my website
   @crm_app_name = "Ariane's CRM"
   erb :index
 end
 
-get '/contacts' do
+get "/contacts" do
   erb :contacts
 end
 
-get '/contacts/new' do
+get "/contacts/new" do
   erb :new_contact
 end
 
-post '/contacts' do
+post "/contacts" do
   Contact.create(params[:first_name], params[:last_name], params[:email], params[:note])
-  redirect to('/contacts')
+  redirect to("/contacts")
 end
