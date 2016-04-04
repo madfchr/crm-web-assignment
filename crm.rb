@@ -5,6 +5,9 @@
 require_relative "contact"
 require "sinatra"
 
+# Temporary fake date so that we always find contact with id 1.
+Contact.create("Johnny", "Bravo", "johnny@bitmakerlabs.com", "Rockstar")
+
 get "/" do      # '/' matches the top level of my website
   @crm_app_name = "Ariane's CRM"
   erb :index
@@ -21,4 +24,9 @@ end
 post "/contacts" do
   Contact.create(params[:first_name], params[:last_name], params[:email], params[:note])
   redirect to("/contacts")
+end
+
+get "/contacts/1" do
+  @contact = Contact.find(1)
+  erb :show_contact
 end
