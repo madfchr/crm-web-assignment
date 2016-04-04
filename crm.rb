@@ -11,13 +11,14 @@ get '/' do      # '/' matches the top level of my website
 end
 
 get '/contacts' do
-  Contact.create('Ariane', 'Foucher', 'ariane@me.com', 'Loves coding')
-  Contact.create('Kim', 'Oleiro', 'kim@her.com', 'New Bitmaker bestie')
-  Contact.create('Arthur', 'Chayka', 'arthur@universe.ca', 'New Tinder crush')
-
-erb :contacts
+  erb :contacts
 end
 
 get '/contacts/new' do
   erb :new_contact
+end
+
+post '/contacts' do
+  Contact.create(params[:first_name], params[:last_name], params[:email], params[:note])
+  redirect to('/contacts')
 end
