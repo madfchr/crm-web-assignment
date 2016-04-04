@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- Content inside the <head> will not be displayed on the web page itself. -->
   <head>
+    <meta charset="utf-8">
     <title>ariane's crm</title>
+    <!-- title will be displayed on the title bar in the browser window -->
+    <!-- **** Find out how to add an image (logo or something) -->
     <link rel="stylesheet" type="text/css" href="/style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/main.css"> -->
     <!-- <img src="header.jpg"> -->
   </head>
 
+<!-- All the visible content within the web page falls within the <body> element. -->
   <body>
 
     <header>
-      <nav>
-        <a href="/">home</a> | <a href="/contacts">view all contacts</a>
+      <nav class="oustanding">
+        <a class="oustanding" href="/">home</a> | | | <a class="oustanding" href="/contacts">view all contacts</a>
       </nav>
     </header>
 
     <%= yield %>
 
-    <footer>&copy; 2016 arianedesf</footer>
+  <footer id="arianedesf">&copy;arianedesf | | | twenty-sixteen</footer>
 
   </body>
 
