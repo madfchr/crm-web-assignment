@@ -7,3 +7,7 @@
   <input type="hidden" name="_method" value="delete">
   <input type="submit" value="Delete contact">
 </form>
+
+<form action="/contacts/<%= @contact.id %>/edit">
+  <input type="submit" value="Edit contact">
+</form>
