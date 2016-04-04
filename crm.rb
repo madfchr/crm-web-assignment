@@ -6,7 +6,7 @@ require_relative "contact"
 require "sinatra"
 
 get "/" do      # '/' matches the top level of my website
-  @crm_app_name = "Ariane's CRM"
+  @crm_app_name = "ariane's crm"
   erb :index
 end
 
